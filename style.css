@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: #333;
 }
 html{
 	display: flex;
@@ -10,81 +11,72 @@ html{
 body{
 	width: 100%;
 	height: 100vh; /* min-height: 100vh; ?*/
-	justify-content: center;
-	align-content: center;
 	background-image: url("images/wall.png");
     background-attachment: fixed;
 }
+
+
 header{
 	display: flex;
-	justify-content: space-around; /* axe 1 */
 	flex-direction: row;
-	align-items: flex-start;
-	font-size: 2vmax;
 	width: 80%;
+	height: 20%;
 	margin-left: 20%;
-	border: solid 2px orange;
 }
 header div{
     display: -webkit-flex;
     display: flex;
 	align-items: center; /* axe 2 */
 	flex-direction: column;
-	border: 4px solid yellow;
-	height: 200%;
-	flex: 2.5 1;
-}
-header p{
-	flex: 1 2;
+	height: 100%;
+	flex: 3 1;
 }
 header div *{
+	display: -webkit-flex;
 	display: flex;
-	align-items: center; /* vertical align ! */
 }
-header div h1{
-	border: 2px solid red;
+div > h1{
 	flex: 2 1;
-}
-header div p{
-	display: flex;
-	border: 2px solid blue;
-	flex: 1;
 }
 header p{
 	height: 100%;
-	display: flex;
     -webkit-flex: 1;
     flex: 1;
-	justify-content: center;
-	align-items: center;
-	border: solid 1px green;
+}
+header a{
+	height: 100%;
+	width: 100%;
+}
+header div h1{ /* "John Doe" */
+	align-items: flex-end;
+}
+header h1 + p{
+	text-align: center;
+	font-size: 2vmax;
+	color: #1f6f78;
+	font-style: italic;
+	align-items: flex-start;
 }
 
 
+/* middle */
+
+aside{
+	display: block;
+	float: left;
+	width: 20%;
+	height: 100%;
+	background-image: url("images/aside.png");
+}
 #wrap{
 	display: flex;
 	width: 80%;
 	margin-left: 20%;
 	flex-direction: row;
 }
-aside{
-	display: block;
-	float: left;
-	width: 20%;
-	height: 100%;
-	background-color: red;
-}
-h1 + p{
-	text-align: center;
-	font-size: 1.25em;
-	margin-bottom: 1%;
-	color: #1f6f78;
-	font-style: italic;
-}
 h1{
-	text-align: center;
 	color: #259073;
-	font-size: 3em;
+	font-size: 7vmax;
 	font-family: 'Alex Brush', cursive;
 }
 h2{
@@ -93,14 +85,17 @@ h2{
 }
 a > img{
 	cursor: default;
-	width: 70%;
-	box-shadow: 0px 15px 10px -10px rgba(0, 0, 0, 0.8);
-/* 	transition: all ease-in-out 300ms; */
+	padding-top: 10px;
+	padding-right: 10px;
+	max-width: 100%; /* maybe max-width maybe normal one ? */
+	height: auto;
+/* 	box-shadow: 0px 15px 10px -10px rgba(0, 0, 0, 0.8);
+transition: all ease-in-out 300ms; */
 }
-a > img:hover{
+/* a > img:hover{
 	box-shadow: 0px 25px 15px -15px rgba(0, 0, 0, 0.6);
 	transform: translate(0px, -5px);
-}
+} */
 ul{
 	background-color: #3baea0;
 	margin-left: 1.5%;

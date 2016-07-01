@@ -5,8 +5,15 @@
 	color: #333;
 }
 html{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 body{
 	width: 100%;
@@ -17,47 +24,91 @@ body{
 
 
 header{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
 	width: 80%;
 	height: 20%;
 	margin-left: 20%;
 }
 header div{
     display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-	align-items: center; /* axe 2 */
-	flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center; /* axe 2 */
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	height: 100%;
-	flex: 3 1;
+	-webkit-box-flex: 3;
+	-webkit-flex: 3 1;
+	    -ms-flex: 3 1;
+	        flex: 3 1;
 }
 header div *{
 	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 div > h1{
-	flex: 2 1;
+	-webkit-box-flex: 2;
+	-webkit-flex: 2 1;
+	    -ms-flex: 2 1;
+	        flex: 2 1;
 }
 header p{
 	height: 100%;
     -webkit-flex: 1;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 header a{
 	height: 100%;
 	width: 100%;
 }
 header div h1{ /* "John Doe" */
-	align-items: flex-end;
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
 }
 header h1 + p{
 	text-align: center;
 	font-size: 2vmax;
 	color: #1f6f78;
 	font-style: italic;
-	align-items: flex-start;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 }
-
+a > img{
+	cursor: default;
+	padding-top: 10px;
+	padding-right: 10px;
+	max-width: 100%; /* maybe max-width maybe normal one ? */
+	height: auto;
+	box-shadow: 0px 15px 10px -10px rgba(0, 0, 0, 0.8);
+	transition: all ease-in-out 300ms; */
+}
+a > img:hover{
+	box-shadow: 0px 25px 15px -15px rgba(0, 0, 0, 0.6);
+	transform: translate(0px, -5px);
+}
 
 /* middle */
 
@@ -69,10 +120,22 @@ aside{
 	background-image: url("images/aside.png");
 }
 #wrap{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	width: 80%;
-	margin-left: 20%;
-	flex-direction: row;
+	width: 70%;
+	padding-top: 5vmax;
+	margin: auto;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+.experience, .skills, .my_path{
+	display: flex;
+	flex-direction: column;
 }
 h1{
 	color: #259073;
@@ -82,27 +145,77 @@ h1{
 h2{
 	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
+	text-align: center;
+	font-size: 4vmax;
 }
-a > img{
-	cursor: default;
-	padding-top: 10px;
-	padding-right: 10px;
-	max-width: 100%; /* maybe max-width maybe normal one ? */
-	height: auto;
-/* 	box-shadow: 0px 15px 10px -10px rgba(0, 0, 0, 0.8);
-transition: all ease-in-out 300ms; */
-}
-/* a > img:hover{
-	box-shadow: 0px 25px 15px -15px rgba(0, 0, 0, 0.6);
-	transform: translate(0px, -5px);
-} */
 ul{
-	background-color: #3baea0;
-	margin-left: 1.5%;
+	background-color: rgba(59,174,160,.6);
+	margin: 0% 8%;
 	border-radius: 0px 10px 0px 10px;
-	border: 1px outset #1f6f78;
 }
 li{
-	margin-left: .7%;
+	font-size: 2vmax;
+	padding: 0% 5%;
 	list-style-type: none;
+}
+li::before {
+    background-image: url("images/arrow2.svg");
+    display: inline-block;
+    background-size: 2vmax 2vmax;
+    width: 2vmax; 
+    height: 2vmax;
+    background-repeat: no-repeat;
+    content:"";
+    vertical-align: middle;
+    font-weight: bold;
+    color: red;
+}
+.bad::before{
+    background-image: url("images/sword.svg");
+}
+footer{
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	margin: auto;
+}
+/* -------- */ 
+
+@media screen and (max-width: 1024px) {
+	aside{
+		visibility: hidden;
+	}
+	#wrap{
+		width: 100%;
+		flex-direction: column;
+	}
+	header{
+		width: 100%;
+		margin-left: 0%;
+	}
+	body{
+		height: 100%;
+	}
+	ul, li{
+		margin: 0;
+	}
+	li{
+		margin: 0 0%;
+		font-size: 2.7vmax;
+	}
+	h2{
+		padding-bottom: 10px;
+	}
+	ul{
+		width: 80%;
+		margin: auto;
+	}
+	.experience, .skills, .my_path{
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 600px) {
+	li{
+		font-size: 2.4vmax;
+	}
 }

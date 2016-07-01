@@ -124,7 +124,7 @@ aside{
 	display: flex;
 	width: 70%;
 	padding-top: 3vmax;
-	padding-bottom: 5vmax;
+	padding-bottom: 7vmax;
 	margin: auto;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
@@ -254,8 +254,8 @@ s{
 	}
 	footer{
 		padding: 1vmax 0;
-		height: 5vmax;
-		line-height: 1.5vmax;
+		height: 6vmax;
+		line-height: 2vmax;
 	}
 }
 @media screen and (min-width: 1500px) { /* not the best way... */

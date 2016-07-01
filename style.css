@@ -133,17 +133,6 @@ aside{
 	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
-.experience, .skills, .my_path{
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-}
 h1{
 	color: #259073;
 	font-size: 7vmax;
@@ -228,13 +217,6 @@ s{
 	ul{
 		width: 80%;
 		margin: auto;
-	}
-	.experience, .skills, .my_path{
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-webkit-flex-direction: column;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
 	}
 	header{
 		-webkit-box-orient: vertical;

@@ -5,6 +5,7 @@
 	color: #333;
 }
 html{
+	height: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -17,11 +18,11 @@ html{
 }
 body{
 	width: 100%;
-	height: 100vh; /* min-height: 100vh; ?*/
+	height: 100%; /* min-height: 100vh; ?*/
 	background-image: url("images/wall.png");
     background-attachment: fixed;
+    margin-bottom: 5%;
 }
-
 
 header{
 	display: -webkit-box;
@@ -34,7 +35,6 @@ header{
 	    -ms-flex-direction: row;
 	        flex-direction: row;
 	width: 80%;
-	height: 20%;
 	margin-left: 20%;
 }
 header div{
@@ -45,7 +45,7 @@ header div{
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	    -ms-flex-align: center;
-	        align-items: center; /* axe 2 */
+	        align-items: center;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
@@ -56,12 +56,6 @@ header div{
 	-webkit-flex: 3 1;
 	    -ms-flex: 3 1;
 	        flex: 3 1;
-}
-header div *{
-	display: -webkit-flex;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
 }
 div > h1{
 	-webkit-box-flex: 2;
@@ -100,23 +94,26 @@ a > img{
 	cursor: default;
 	padding-top: 10px;
 	padding-right: 10px;
-	max-width: 100%; /* maybe max-width maybe normal one ? */
-	height: auto;
+	width: auto;
+	height: 100%;
 	box-shadow: 0px 15px 10px -10px rgba(0, 0, 0, 0.8);
-	transition: all ease-in-out 300ms; */
+	-webkit-transition: all ease-in-out 300ms;
+	        transition: all ease-in-out 300ms;
 }
 a > img:hover{
 	box-shadow: 0px 25px 15px -15px rgba(0, 0, 0, 0.6);
-	transform: translate(0px, -5px);
+	-webkit-transform: translate(0px, -5px);
+	    -ms-transform: translate(0px, -5px);
+	        transform: translate(0px, -5px);
 }
-
 /* middle */
 
 aside{
 	display: block;
 	float: left;
 	width: 20%;
-	height: 100%;
+	height: 105%;
+	z-index: 10;
 	background-image: url("images/aside.png");
 }
 #wrap{
@@ -125,7 +122,7 @@ aside{
 	display: -ms-flexbox;
 	display: flex;
 	width: 70%;
-	padding-top: 5vmax;
+	padding: 4vmax 0;
 	margin: auto;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
@@ -134,8 +131,15 @@ aside{
 	        flex-direction: row;
 }
 .experience, .skills, .my_path{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 h1{
 	color: #259073;
@@ -143,7 +147,7 @@ h1{
 	font-family: 'Alex Brush', cursive;
 }
 h2{
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Kaushan Script', cursive;
 	font-weight: bold;
 	text-align: center;
 	font-size: 4vmax;
@@ -158,8 +162,8 @@ li{
 	padding: 0% 5%;
 	list-style-type: none;
 }
-li::before {
-    background-image: url("images/arrow2.svg");
+li:before {
+    background-image: url("images/arrow.svg");
     display: inline-block;
     background-size: 2vmax 2vmax;
     width: 2vmax; 
@@ -167,34 +171,46 @@ li::before {
     background-repeat: no-repeat;
     content:"";
     vertical-align: middle;
-    font-weight: bold;
-    color: red;
-}
-.bad::before{
-    background-image: url("images/sword.svg");
+    font-weight: bold;}
+.bad-boy:before{
+    background-image: url("images/fedora.svg");
 }
 footer{
-	width: 50%;
-	position: absolute;
+	display: block;
+	position: fixed;
 	bottom: 0;
-	margin: auto;
+	z-index: 20;
+	height: 3vmax;
+	line-height: 3vmax;
+	width: 100%;
+	background-image: url("images/scales.png");
+	text-align: center;
+	vertical-align: middle;
+}
+footer p{
+	color: #fff;
+}
+.heart{
+	color: red;
+}
+s{
+	color: #259073;
 }
 /* -------- */ 
 
 @media screen and (max-width: 1024px) {
 	aside{
-		visibility: hidden;
+		display: none;
 	}
 	#wrap{
+		display: block;
 		width: 100%;
-		flex-direction: column;
 	}
 	header{
 		width: 100%;
 		margin-left: 0%;
 	}
 	body{
-		height: 100%;
 	}
 	ul, li{
 		margin: 0;
@@ -211,11 +227,39 @@ footer{
 		margin: auto;
 	}
 	.experience, .skills, .my_path{
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+	header{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+	header p{
+		-webkit-align-self: center;
+		    -ms-flex-item-align: center;
+		        align-self: center;
 	}
 }
 @media screen and (max-width: 600px) {
 	li{
 		font-size: 2.4vmax;
+	}
+}
+@media screen and (min-width: 1500px) { /* not the best way... */
+	li{
+		font-size: 1.5vmax;
+	}
+	h2{
+		font-size: 3vmax;
+	}
+	footer{
+		height: 2vmax;
+		line-height: 2vmax;
 	}
 }

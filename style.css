@@ -85,7 +85,7 @@ header div h1{ /* "John Doe" */
 header h1 + p{
 	text-align: center;
 	font-size: 2vmax;
-	color: #1f6f78;
+	color: #711f78;
 	font-style: italic;
 	-webkit-box-align: start;
 	-webkit-align-items: flex-start;
@@ -158,7 +158,7 @@ li:before {
     background-image: url("images/arrow.svg");
     display: inline-block;
     background-size: 2vmax 2vmax;
-    width: 2vmax; 
+    width: 2vmax;
     height: 2vmax;
     background-repeat: no-repeat;
     content:"";
@@ -188,7 +188,7 @@ footer p{
 s{
 	color: #259073;
 }
-/* -------- */ 
+/* -------- */
 
 @media screen and (max-width: 1024px) {
 	aside{
